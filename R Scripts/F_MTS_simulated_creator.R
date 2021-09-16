@@ -9,7 +9,8 @@
 # - Neither  the  name  of  Caltech  nor  its  operating  division,  the  Jet  Propulsion  Laboratory,  nor  the names  of  its  contributors  may  be  used  to  endorse  or  promote  products  derived  from  this  software without  specific  prior  written  permission.
 # 
 # THIS  SOFTWARE  IS  PROVIDED  BY  THE  COPYRIGHT  HOLDERS  AND  CONTRIBUTORS  "AS IS" AND  ANY  EXPRESS  OR  IMPLIED  WARRANTIES, INCLUDING, BUT  NOT  LIMITED  TO, THE  IMPLIED  WARRANTIES  OF  MERCHANTABILITY  AND  FITNESS  FOR A  PARTICULAR PURPOSE ARE DISCLAIMED. 
-# IN NO EVENT SHALL THE  COPYRIGHT  OWNER OR CONTRIBUTORS BE  LIABLE  FOR  ANY  DIRECT,  INDIRECT,  INCIDENTAL,  SPECIAL, EXEMPLARY, OR  CONSEQUENTIAL  DAMAGES (INCLUDING,  BUT  NOT  LIMITED  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS  OF  USE, DATA, OR  PROFITS; OR  BUSINESS  INTERRUPTION)  HOWEVER  CAUSED  AND  ON  ANY  THEORY  OF  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)  ARISING  IN  ANY  WAY  OUT  OF  THE  USE  OF  THIS  SOFTWARE,  EVEN  IF ADVISED OF  THE  POSSIBILITY  OF  SUCH  DAMAGE.
+# IN NO EVENT SHALL THE  COPYRIGHT  OWNER OR CONTRIBUTORS BE  LIABLE  FOR  ANY  DIRECT,  INDIRECT,  INCIDENTAL,  SPECIAL, EXEMPLARY, OR  CONSEQUENTIAL  DAMAGES (INCLUDING,  BUT  NOT  LIMITED  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS  OF  USE, DATA, OR  PROFITS; 
+# OR  BUSINESS  INTERRUPTION)  HOWEVER  CAUSED  AND  ON  ANY  THEORY  OF  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)  ARISING  IN  ANY  WAY  OUT  OF  THE  USE  OF  THIS  SOFTWARE,  EVEN  IF ADVISED OF  THE  POSSIBILITY  OF  SUCH  DAMAGE.
 
 
 ####### This is the script used to generate simulated data for arbitarly number of 
@@ -121,7 +122,6 @@ flag_pca<-0  # with PCA
 all_feat_clusters<-Cluster_Formation(CSV_File_Name,features,feat,feats_len,flag_Norm,flag_cvi,flag_pca,flag_feat_builtin,n_pc,K,cwd)
 toc()
 
-tic("Gas_Feature_Tsfeature_Clustering")
 n_pc<-10
 feat2=c(3)
 flag_feat_builtin<-0
@@ -129,7 +129,7 @@ K<-2
 flag_cvi<-1
 flag_pca<-0  # with PCA
 Gas_clusters<-Cluster_Formation(CSV_File_Name,features,feat2,feats_len,flag_Norm,flag_cvi,flag_pca,flag_feat_builtin,n_pc,K,cwd)
-toc()
+
 
 ###################################################
 ##### Creating data for static data
@@ -144,6 +144,4 @@ Static_Data<-apply(Static_Data, 2, as.numeric)  # in all the columns are list an
 save_loc<- '/Users/User_name/Documents/Synthetic_MTS/Static_data.csv'
 write.csv(Static_Data, file = save_loc,row.names=TRUE)  # Saving the Static Data
 
-#################################################3
-Static_Data<-read.csv("/Users/User_name/Documents/Synthetic_MTS/Static_data.csv",header = TRUE,sep = ',')
 
