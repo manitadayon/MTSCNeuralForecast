@@ -1,3 +1,6 @@
+![Github stats](https://github-readme-stats.vercel.app/api?username=manitadayon)
+
+
 # MTSCNeuralForecast
 
 ### **MTSCNeuralForecast:Python and R scripts for time series forecasting, clustering, anomaly detection and imputing missing values.**
